@@ -96,7 +96,7 @@ func entrypoint() error {
 								}
 
 								_, errNK := cfg.Section(directive[len(directive)-2]).NewKey(
-									directive[len(directive)-1], kv[1],
+									strings.ReplaceAll(directive[len(directive)-1], "-_", "/"), kv[1],
 								)
 								if errNK != nil {
 									return errNK
